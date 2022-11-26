@@ -1,0 +1,62 @@
+{
+    "data_list": "/WD1/paii_internship/workspace/cvpr/hip_exp/100train_200test_dataset.json",
+    "data_list2": "/WD1/paii_internship/workspace/tmi_rebuttal/exp2/rotation20.json",
+    "data": "hip",
+    "exp_dir": "Checkpoints/hip_",
+    "encoder_reload1": "/WD1/paii_internship/yuhang_transfer/resnet_pretrained.pth",
+    "encoder_reload": "/home/rudy/Downloads/hrnetv2_w18_imagenet_pretrained.pth",
+
+    "one_shot_sample1": "9004462#20040812#00190304_R",
+    "one_shot_sample2": "9256759#20040924#00258804_L",
+    "one_shot_sample3": "9271023#20050329#00673505_L",
+    "one_shot_sample4": "9055361#20041104#00353305_R",
+    "one_shot_sample5": "9102858#20130225#03943901_L",
+    "one_shot_sample": "9182305#20060404#01464405_L",
+
+    "use_partial_sup": false,
+    "sample_percent": 1,
+    "pretrained_ckp": "hip_06_04_11_26_40",
+
+    "upper_lower_joint": "joint",
+    "num_heads": 1,
+    "decoder":"gcn",
+    "encoder":"hrnet",
+    "normstep": false,
+    "init_control_type": "meanshape",
+    "gcn_steps" : 5,
+    "optimizer": "adam",
+    "lr": 1e-4,
+    "psp":"psp",
+    "lr_decay": 35,
+    "gamma": 0.96,
+    "weight_decay": 1e-4,
+    "grad_clip": 40,
+    "max_epochs": 200,
+    "print_freq": 10,
+    "val_freq": 10,
+    "gcn_in_dim": 256,
+    "gcn_out_dim": 256,
+    "n_neighbor": 4,
+    "nInputChannels": 3,
+    "cp_num": 1000,
+    "img_size": [256, 256],
+    "gpus": [1,0],
+    "grid_size_encoder": [64, 64],
+    "val_img_num": [8, 15],
+    "loss_type":"L1",
+    "dataset": {
+        "train" : {
+            "batch_size":  8,
+            "num_workers": 12
+        },
+        "val" : {
+            "batch_size": 8,
+            "num_workers": 12
+        },
+        "test" : {
+            "batch_size": 1,
+            "num_workers": 12
+        }
+    },
+    "test_write_dir": "/WD1/paii_internship/workspace/cvpr/hip_exp/resized_selected_dataset"
+}

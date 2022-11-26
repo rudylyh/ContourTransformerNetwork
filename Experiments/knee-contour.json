@@ -1,0 +1,58 @@
+{
+    "data_list": "/WD1/paii_internship/workspace/cvpr/knee_exp/dataset_1102.json",
+    "data": "knee",
+    "roi_name": "femur",
+    "roi_name1": "tibia",
+    "exp_dir": "Checkpoints/knee_femur_",
+    "exp_dir1": "Checkpoints/knee_tibia_",
+    "encoder_reload": "/WD1/paii_internship/yuhang_transfer/resnet_pretrained.pth",
+
+    "one_shot_sample": "9009927#20050613#00862204_left",
+    "use_partial_sup": false,
+    "sample_percent": 0.1,
+    "pretrained_ckp1": "knee_femur_11_10_14_27_37",
+    "pretrained_ckp2": "knee_tibia_11_10_14_29_22",
+
+    "upper_lower_joint": "joint",
+    "num_heads": 1,
+    "decoder":"gcn",
+    "encoder":"resnet",
+    "normstep": false,
+    "init_control_type": "meanshape",
+    "gcn_steps" : 5,
+    "optimizer": "adam",
+    "lr": 1e-4,
+    "psp":"psp",
+    "lr_decay": 35,
+    "gamma": 0.96,
+    "weight_decay": 1e-4,
+    "grad_clip": 40,
+    "max_epochs": 250,
+    "print_freq": 10,
+    "val_freq": 10,
+    "gcn_in_dim": 256,
+    "gcn_out_dim": 256,
+    "n_neighbor": 4,
+    "nInputChannels": 3,
+    "cp_num": 1000,
+    "img_size": [360, 360],
+    "gpus": [1,0],
+    "grid_size_encoder": [45, 45],
+    "val_img_num": [8, 15],
+    "loss_type":"L1",
+    "dataset": {
+        "train" : {
+            "batch_size":  8,
+            "num_workers": 12
+        },
+        "val" : {
+            "batch_size": 8,
+            "num_workers": 12
+        },
+        "test" : {
+            "batch_size": 1,
+            "num_workers": 12
+        }
+    },
+    "test_write_dir": "/home/yuhang/workspace/cvpr/knee_exp/dataset_1102"
+}
